@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "Password",
   database: "messagesDB",
   connectionLimit: 20,
 });
@@ -46,7 +46,7 @@ module.exports = {
 
       connection.query(
         "INSERT INTO messages SET ?", // Noted here the SET ? syntax is used to indicate that the values will be provided as an object.
-        newMessage, // The object being inserted into the DB
+        newMessage, // The object being inserted into the DB.
         (error, result) => {
           connection.release();
 
@@ -55,7 +55,7 @@ module.exports = {
             return callback("Failed to store message in database", null);
           }
 
-          callback(null, "Message stored successfully"); // null here indicates there were no errors, the 2nd param is the success message
+          callback(null, "Message stored successfully"); // null here indicates there were no errors. The 2nd param is the success message.
         }
       );
     });

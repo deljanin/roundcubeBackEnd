@@ -13,6 +13,7 @@ module.exports = {
 
   addMessage: (request, response) => {
     const { message, name } = request.body;
+    // console.log(request.body); Used this to see if the form data was sent correctly
 
     if (!message || !name) {
       return response
